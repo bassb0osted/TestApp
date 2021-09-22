@@ -1,0 +1,12 @@
+.home-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}

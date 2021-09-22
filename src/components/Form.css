@@ -1,0 +1,47 @@
+.addbank-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addbank-form input {
+    margin: 5px;
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    border-width: 0px;
+    outline: none;
+    padding: 11px 20px 11px 11px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2em;
+    color: black;
+}
+
+.addbank-form input::placeholder {
+    color: #737373;
+}
+
+.addbank-form button {
+    padding: 10px 50px 10px 50px;
+    border-radius: 8px;
+    border-width: 0px;
+    margin: 5px;
+
+    background-color: black;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2em;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form.addbank-form button:hover {
+    padding: 12px 52px 12px 52px;
+}
