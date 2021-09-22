@@ -26,17 +26,19 @@ export default function Form({handler, buttonText, headerText}) {
     }
 
     const validation = () => {
-        if((interestRate < 0 || interestRate > 100) && interestRate !== '')
+
+        if(interestRate !== '' && isNaN(parseInt(interestRate)) || (interestRate < 0 || interestRate > 100))
             setIndexError(1)
-        else if((maximumLoan <= 0) && maximumLoan !== '')
+
+        else if(maximumLoan !== '' && isNaN(parseInt(maximumLoan)) || maximumLoan < 0)
             setIndexError(2)
-        else if((minimumDownPayment < 0 || minimumDownPayment > 100) && minimumDownPayment !== '')
+        else if(minimumDownPayment !== '' && isNaN(parseInt(minimumDownPayment)) || minimumDownPayment < 0 || minimumDownPayment > 100)
             setIndexError(3)
-        else if((loanTerm < 0) && loanTerm !== '')
+        else if(loanTerm !== '' && isNaN(parseInt(loanTerm)) || loanTerm < 0)
             setIndexError(4)
-        else if((cardTransactionFee < 0 || cardTransactionFee > 100) && cardTransactionFee !== '')
+        else if(cardTransactionFee !== '' && isNaN(parseInt(cardTransactionFee)) || cardTransactionFee < 0 || cardTransactionFee > 100)
             setIndexError(5)
-        else if((minimumDepositInterestRate <= 0 || minimumDepositInterestRate >= 100) && minimumDepositInterestRate !== '')
+        else if(minimumDepositInterestRate !== '' && isNaN(parseInt(minimumDepositInterestRate)) || minimumDepositInterestRate < 0 || minimumDepositInterestRate >= 100)
             setIndexError(6)
         else
             setIndexError(0)
@@ -46,6 +48,8 @@ export default function Form({handler, buttonText, headerText}) {
     return(
         <form className = 'addbank-form' onSubmit = {e => e.preventDefault()}>
             <h4 style = {{marginBlock: 0, margin: 4}}>{headerText}</h4>
+
+            <p>Everywhere except "bank name"<br></br> enter only numbers</p>
             
             <input type = 'text' placeholder = 'Bank name' value = {bankName} onChange = {(e) => setBankName(e.target.value)}></input>
             
